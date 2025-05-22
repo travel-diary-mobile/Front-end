@@ -81,3 +81,4 @@ baseURL: 'https://traveldiary.azurewebsites.net/diarioviagens'
 |              |                                                                  |
 
 
+
