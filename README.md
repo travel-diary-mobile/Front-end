@@ -38,7 +38,7 @@ O projeto foi desenvolvido com as seguintes bibliotecas e ferramentas:
 ## Pré-requisitos:
 
 - Node.js instalado  
-- Expo CLI (`npm install -g expo-cli`)  
+- Expo instalado
 - Git instalado
 
 ## Passos:
