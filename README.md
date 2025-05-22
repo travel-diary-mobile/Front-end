@@ -35,13 +35,13 @@ O projeto foi desenvolvido com as seguintes bibliotecas e ferramentas:
 
 ## ⚙️ Como Executar o Projeto
 
-### Pré-requisitos:
+## Pré-requisitos:
 
 - Node.js instalado  
 - Expo CLI (`npm install -g expo-cli`)  
 - Git instalado
 
-### Passos:
+## Passos:
 
 ```bash
 # Clone o repositório
@@ -50,13 +50,13 @@ cd travel-diary
 
 ```
 
-# Instale as dependências
+## Instale as dependências
 npm install
 
-# Inicie o projeto
+## Inicie o projeto
 npx expo start
 
-# Abra o app Expo Go
+## Abra o app Expo Go
 Scan QR code
 
 
