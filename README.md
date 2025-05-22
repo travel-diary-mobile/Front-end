@@ -20,17 +20,17 @@ Um aplicativo mobile desenvolvido em **React Native** que permite aos usuários 
 
 O projeto foi desenvolvido com as seguintes bibliotecas e ferramentas:
 
-- React Native 0.79.2 – Framework para apps mobile nativos com JavaScript
+- **React Native 0.79.2** – Framework para apps mobile nativos com JavaScript
 
-- React 19.0.0 – Biblioteca base para construção de interfaces
+- **React 19.0.0** – Biblioteca base para construção de interfaces
 
-- Expo ~53.0.9 – Plataforma para desenvolvimento e build de apps React Native
+- **Expo ~53.0.9** – Plataforma para desenvolvimento e build de apps React Native
 
-- Axios ^1.9.0 – Cliente HTTP para chamadas à API
+- **Axios ^1.9.0** – Cliente HTTP para chamadas à API
 
-- expo-linear-gradient ~14.1.4 – Gradientes visuais bonitos
+- **expo-linear-gradient** ~14.1.4 – Gradientes visuais bonitos
 
-- expo-status-bar ~2.2.3 – Controle da aparência da status bar
+- **expo-status-bar** ~2.2.3 – Controle da aparência da status bar
 
 
 ## ⚙️ Como Executar o Projeto
