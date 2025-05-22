@@ -65,6 +65,9 @@ Scan QR code
 ```
 baseURL: 'https://traveldiary.azurewebsites.net/diarioviagens'
 ```
+
+# 🧠 Desenvolvedores
+
 ```
 | Nome         | Função no Projeto                                                |
 | ------------ | ---------------------------------------------------------------- |
