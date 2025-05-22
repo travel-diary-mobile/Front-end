@@ -32,7 +32,7 @@ O projeto foi desenvolvido com as seguintes bibliotecas e ferramentas:
 
 - expo-status-bar ~2.2.3 – Controle da aparência da status bar
 
-```
+
 ## ⚙️ Como Executar o Projeto
 
 ### Pré-requisitos:
@@ -48,6 +48,8 @@ O projeto foi desenvolvido com as seguintes bibliotecas e ferramentas:
 git clone https://github.com/travel-diary-mobile/Front-end.git
 cd travel-diary
 
+```
+
 # Instale as dependências
 npm install
 
@@ -57,12 +59,11 @@ npx expo start
 # Abra o app Expo Go
 Scan QR code
 
-```
-```
+
+
 # 🔗 API
-
+```
 baseURL: 'https://traveldiary.azurewebsites.net/diarioviagens'
-
 ```
 ```
 | Nome         | Função no Projeto                                                |
