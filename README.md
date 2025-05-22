@@ -2,7 +2,7 @@
 
 Um aplicativo mobile desenvolvido em **React Native** que permite aos usuários registrar, visualizar e gerenciar entradas de diário com suas experiências de viagem. A proposta é oferecer uma maneira simples e bonita de eternizar momentos especiais ao redor do mundo.
 
-```
+
 
 ## ✨ Funcionalidades
 
@@ -13,7 +13,7 @@ Um aplicativo mobile desenvolvido em **React Native** que permite aos usuários 
 - 🔄 **Carregamento automático** de dados via API  
 - 🎨 Interface com **design intuitivo e responsivo**
 
-```
+
 
 ```
 ## 📱 Tecnologias Utilizadas
