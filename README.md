@@ -68,7 +68,7 @@ baseURL: 'https://traveldiary.azurewebsites.net/diarioviagens'
 
 # 🧠 Desenvolvedores
 
-```
+
 | Nome         | Função no Projeto                                                |
 | ------------ | ---------------------------------------------------------------- |
 | **Letícia**  | TechLead, Back-End e Front-End                                   |
@@ -80,5 +80,4 @@ baseURL: 'https://traveldiary.azurewebsites.net/diarioviagens'
 | **Danielly** | Desing e Front-End                                               |
 |              |                                                                  |
 
-```
 
