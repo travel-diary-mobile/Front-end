@@ -15,7 +15,7 @@ Um aplicativo mobile desenvolvido em **React Native** que permite aos usuários 
 
 
 
-```
+
 ## 📱 Tecnologias Utilizadas
 
 O projeto foi desenvolvido com as seguintes bibliotecas e ferramentas:
@@ -31,7 +31,7 @@ O projeto foi desenvolvido com as seguintes bibliotecas e ferramentas:
 - expo-linear-gradient ~14.1.4 – Gradientes visuais bonitos
 
 - expo-status-bar ~2.2.3 – Controle da aparência da status bar
-```
+
 ```
 ## ⚙️ Como Executar o Projeto
 
