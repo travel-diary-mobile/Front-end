@@ -1,8 +1,10 @@
 import React, { useState, useContext } from 'react';
-import { View, TextInput, TouchableOpacity, Text, StyleSheet, ScrollView, Image, Alert, Dimensions } from 'react-native';
+import {View,TextInput, TouchableOpacity, Text, StyleSheet, ScrollView, Image, Alert, Dimensions,} from 'react-native';
 import { DiarioContext } from '../context/DiarioContext';
 import * as ImagePicker from 'expo-image-picker';
+import { StatusBar } from 'expo-status-bar';
 import { LinearGradient } from 'expo-linear-gradient';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 export default function Adicionar({ navigation }) {
   const { adicionar } = useContext(DiarioContext);
@@ -10,7 +12,11 @@ export default function Adicionar({ navigation }) {
   const [descricao, setDescricao] = useState('');
   const [destino, setDestino] = useState('');
   const [dataViagem, setDataViagem] = useState('');
+  const [atividades, setAtividades] = useState('');
+  const [mostrarTags, setMostrarTags] = useState(false);
   const [imagemBase64, setImagemBase64] = useState('');
+
+  const opcoesAtividades = ['#praia', '#trilha', '#comida', '#compras', '#museu'];
 
   const selecionarImagem = async () => {
     const { status } = await ImagePicker.requestMediaLibraryPermissionsAsync();
@@ -21,7 +27,7 @@ export default function Adicionar({ navigation }) {
 
     const result = await ImagePicker.launchImageLibraryAsync({
       base64: true,
-      quality: 0.7,
+      quality: 1,
     });
 
     if (!result.cancelled) {
@@ -43,39 +49,64 @@ export default function Adicionar({ navigation }) {
     return data;
   };
 
+  const adicionarTag = (tag) => {
+    if (!atividades.includes(tag)) {
+      setAtividades((prev) => (prev ? `${prev} ${tag}` : tag));
+    }
+  };
+
   const salvar = () => {
     if (dataViagem.length !== 8) {
       Alert.alert('Erro', 'A data deve conter exatamente 8 números no formato DDMMAAAA.');
       return;
     }
-   adicionar(titulo, descricao, destino, dataViagem, imagemBase64);
+
+    adicionar(titulo, descricao, destino, dataViagem, imagemBase64, atividades);
     navigation.navigate('Inicial');
   };
 
   const screenWidth = Dimensions.get('window').width;
 
-  return (
-    <ScrollView contentContainerStyle={styles.container}>
-      <Text style={styles.title}>Adicionar Diário</Text>
+  return ( 
 
-      <TouchableOpacity style={[styles.imagemContainer, { width: screenWidth * 0.9 }]} onPress={selecionarImagem}>
+    <ScrollView style={styles.container}>
+      <SafeAreaView>
+      <LinearGradient
+          colors={['#410E73', '#C47BFC']}
+          start={{ x: 0, y: 1 }}
+          end={{ x: 1, y: 0 }}
+          style={styles.header}
+        >
+          <View style={styles.logoContainer}>
+            <Image
+              source={require('../../assets/aberto-branco.png')}
+              style={styles.logo}
+              resizeMode="contain"
+            />
+            <Text style={styles.siteNome}>TravelDiary</Text>
+          </View>
+          <StatusBar style="black" />
+        </LinearGradient>
+      </SafeAreaView>
+
+    <ScrollView contentContainerStyle={styles.containerInputs}>
+      <TouchableOpacity
+        style={[styles.imagemContainer, { width: screenWidth * 0.9 }]}
+        onPress={selecionarImagem}
+      >
         {imagemBase64 ? (
           <Image
             source={{ uri: `data:image/png;base64,${imagemBase64}` }}
             style={styles.imagemPreview}
           />
         ) : (
-          <Text style={styles.mais}>+</Text>
+          <Text style={styles.mais}>＋</Text>
         )}
       </TouchableOpacity>
 
       <View style={styles.labelInput}>
         <Text style={styles.label}>Título:</Text>
-        <TextInput
-          style={styles.input}
-          value={titulo}
-          onChangeText={setTitulo}
-        />
+        <TextInput style={styles.input} value={titulo} onChangeText={setTitulo} />
       </View>
 
       <View style={styles.labelInput}>
@@ -89,18 +120,9 @@ export default function Adicionar({ navigation }) {
       </View>
 
       <View style={styles.labelInput}>
-        <Text style={styles.label}>Destino:</Text>
-        <TextInput
-          style={styles.input}
-          value={destino}
-          onChangeText={setDestino}
-        />
-      </View>
-
-      <View style={styles.labelInput}>
         <Text style={styles.label}>Data:</Text>
         <TextInput
-          style={styles.input}
+          style={[styles.input, { width: '50%' }]}
           placeholder="DD/MM/AAAA"
           value={formatarData(dataViagem)}
           onChangeText={handleDataChange}
@@ -109,49 +131,112 @@ export default function Adicionar({ navigation }) {
         />
       </View>
 
+      <View style={styles.labelInput}>
+        <Text style={styles.label}>Atividades Realizadas:</Text>
+        <TouchableOpacity onPress={() => setMostrarTags(!mostrarTags)}>
+          <TextInput
+            style={styles.input}
+            value={atividades}
+            placeholder="Adicione uma #:"
+            editable={false}
+          />
+        </TouchableOpacity>
+        {mostrarTags && (
+          <View style={styles.tagsContainer}>
+            {opcoesAtividades.map((tag, index) => (
+              <TouchableOpacity key={index} onPress={() => adicionarTag(tag)} style={styles.tag}>
+                <Text style={styles.tagText}>{tag}</Text>
+              </TouchableOpacity>
+            ))}
+          </View>
+        )}
+      </View>
+      
+      </ScrollView>
+
+      <SafeAreaView >
       <View style={styles.botoes}>
         <TouchableOpacity style={styles.botaoCancelar} onPress={() => navigation.goBack()}>
           <Text style={styles.textoCancelar}>Cancelar</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity onPress={salvar} style={{ flex: 1 }}>
-          <LinearGradient colors={['#A259FF', '#7B2CBF']} style={styles.botaoAdicionar}>
+        <TouchableOpacity style={styles.botaoAdicionar} onPress={salvar} >
+          <LinearGradient colors={['#7B2CBF', '#A259FF']} style={styles.gradiente}>
             <Text style={styles.textoAdicionar}>Adicionar</Text>
           </LinearGradient>
         </TouchableOpacity>
       </View>
+      </SafeAreaView>
     </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
+  container:{
+      backgroundColor: "#fff",
+  },
+
+  header: {
+    width: '100%',
+    height: 65,
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingTop: 40,
+  },
+  siteNome: {
+    position: 'absolute',
+    top: 28,
+    right: 100, //deixa o titulo no lugar certinho, o de cima tmb
+    fontSize: 22,
+    color: 'white',
+    fontWeight: '300', //esse deixa light (mais fino)
+    fontStyle: 'italic', //italic, ai os dois juntos são "light italic"
+  },
+  logoContainer: {
+    width: 120,
+    height: 120,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginLeft: 40,
+  },
+  logo: {
+    width: 60,
+    height: 70,
+    position: 'absolute',
+    top: 9,
+    right: 210,
+    resizeMode: 'contain',
+  },
+  containerInputs: {
     padding: 20,
     backgroundColor: '#fff',
     alignItems: 'center',
   },
-  title: {
-    fontSize: 28,
-    fontWeight: 'bold',
+  pageTitle: {
+    fontSize: 22,
+    fontWeight: '600',
     color: '#7B2CBF',
-    marginBottom: 20,
+    marginBottom: 15,
   },
   imagemContainer: {
-    aspectRatio: 16 / 9,
-    backgroundColor: '#F0F0F0',
-    borderRadius: 10,
+    
+    borderWidth: 2,
+    borderColor: '#f0f0f0',
+    aspectRatio: 2,
+    backgroundColor: '#fff',
+    borderRadius: 12,
     justifyContent: 'center',
     alignItems: 'center',
     marginBottom: 20,
   },
   mais: {
-    fontSize: 40,
+    fontSize: 36,
     color: '#7B2CBF',
   },
   imagemPreview: {
     width: '100%',
     height: '100%',
-    borderRadius: 10,
+    borderRadius: 12,
   },
   labelInput: {
     width: '100%',
@@ -168,19 +253,41 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     padding: 10,
     width: '100%',
+    backgroundColor: '#f9f9f9',
+  },
+  tagsContainer: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    marginTop: 10,
+    gap: 8,
+  },
+  tag: {
+    backgroundColor: '#E0C3FC',
+    paddingVertical: 5,
+    paddingHorizontal: 10,
+    borderRadius: 20,
+  },
+  tagText: {
+    color: '#5A189A',
+    fontWeight: 'bold',
   },
   botoes: {
+    backgroundColor: '#fff',
+    display: 'flex',
     flexDirection: 'row',
-    justifyContent: 'space-between',
+    justifyContent: 'center',
     width: '100%',
-    marginTop: 20,
+    marginBottom: 0,
+    marginTop:0,
+    padding: 20,
+    gap: 10,
   },
   botaoCancelar: {
     borderWidth: 1,
     borderColor: '#7B2CBF',
-    padding: 15,
+    padding: 12,
     borderRadius: 10,
-    width: '48%',
+    width: '40%',
     alignItems: 'center',
   },
   textoCancelar: {
@@ -188,7 +295,12 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   botaoAdicionar: {
-    padding: 15,
+    width: '55%',
+    alignItems: 'center',
+  },
+
+  gradiente: {
+    padding: 13,
     borderRadius: 10,
     alignItems: 'center',
     width: '100%',

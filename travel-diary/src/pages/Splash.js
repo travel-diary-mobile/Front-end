@@ -4,10 +4,6 @@ import { View, Text, StyleSheet, Image, TouchableOpacity, StatusBar } from 'reac
 import { LinearGradient } from 'expo-linear-gradient';
 
 export default function Splash({ navigation }) {
-  useEffect(() => {
-    setTimeout(() => navigation.navigate('Inicial'), 2000);
-  }, []);
-
   return (
         <LinearGradient
           colors={['#C47CFD', '#451278']}
