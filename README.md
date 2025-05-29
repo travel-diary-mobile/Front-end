@@ -60,5 +60,3 @@
    ├── App.js              # Arquivo principal da aplicação
    └── package.json        # Dependências e scripts do projeto
 ```
-
-![Demonstração do projeto](./assets/img/banner.png)
