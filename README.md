@@ -1,6 +1,5 @@
 # 📖 Travel Diary Mobile – Front-end
 
----
 
 - Travel Diary Mobile é um aplicativo feito com carinho para quem ama viajar e registrar memórias especiais. Com ele, você pode criar diários de viagem com fotos, locais,       datas e atividades, tudo em um visual moderno e fácil de usar. Ideal para guardar suas aventuras ou compartilhar experiências com o mundo!
 
