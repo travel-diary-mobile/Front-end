@@ -1,84 +1,62 @@
-# 🌍 Travel Diary App
-
-Um aplicativo mobile desenvolvido em **React Native** que permite aos usuários registrar, visualizar e gerenciar entradas de diário com suas experiências de viagem. A proposta é oferecer uma maneira simples e bonita de eternizar momentos especiais ao redor do mundo.
+# 📖 Travel Diary Mobile – Front-end
 
 
+- Travel Diary Mobile é um aplicativo feito com carinho para quem ama viajar e registrar memórias especiais. Com ele, você pode criar diários de viagem com fotos, locais,       datas e atividades, tudo em um visual moderno e fácil de usar. Ideal para guardar suas aventuras ou compartilhar experiências com o mundo!
 
+---
+
+- **Link para baixar o app:**
+
+   ```bash
+   https://www.mediafire.com/file/7q4wcrsxt4a7epc/application-fd521f38-f6b9-4ee7-9329-5483675831cc.apk/file
+   
+- **Link do figma:**
+
+   ```bash
+   https://www.figma.com/design/DyR3XTthIUz1Z6LVTiojDJ/Untitled?node-id=0-1&t=4hL7LAHbHEyp9L9D-1
+   
 ## ✨ Funcionalidades
 
-- 📸 **Registrar novas viagens** com imagem, local, data, descrição e tags  
-- 📖 **Visualizar entradas** em cards organizados e estilizados  
-- 🏷️ **Adicionar tags** temáticas para categorizar as experiências  
-- 📝 **Adicionar, editar e deletar** entradas do diário  
-- 🔄 **Carregamento automático** de dados via API  
-- 🎨 Interface com **design intuitivo e responsivo**
+-  Criação de diários de viagem com título, descrição, destino, imagens, datas e atividades realizadas.
+-  Visualização e gerenciamento de entradas de diário.
+-  Gerenciamento de diarios favoritos.
 
+## 🛠️ Tecnologias Utilizadas
 
+- **React Native**: Desenvolvimento de aplicações móveis multiplataforma.
+- **JavaScript**: Linguagem principal para lógica de programação.
+- **Expo**: Plataforma para facilitar o desenvolvimento e testes.
+- **React Navigation**: Gerenciamento de navegação entre telas.
+- **Axios**: Comunicação com APIs externas.
+- **Context API**: Gerenciamento de estado global da aplicação.
 
-
-## 📱 Tecnologias Utilizadas
-
-O projeto foi desenvolvido com as seguintes bibliotecas e ferramentas:
-
-- **React Native 0.79.2** – Framework para apps mobile nativos com JavaScript
-
-- **React 19.0.0** – Biblioteca base para construção de interfaces
-
-- **Expo ~53.0.9** – Plataforma para desenvolvimento e build de apps React Native
-
-- **Axios ^1.9.0** – Cliente HTTP para chamadas à API
-
-- **expo-linear-gradient** ~14.1.4 – Gradientes visuais bonitos
-
-- **expo-status-bar** ~2.2.3 – Controle da aparência da status bar
-
-
-## ⚙️ Como Executar o Projeto
-
-## Pré-requisitos:
-
-- Node.js instalado  
-- Expo instalado
-- Git instalado
-
-## Passos:
+## 🚀 Instalação e Execução
 
 ```bash
-# Clone o repositório
-git clone https://github.com/travel-diary-mobile/Front-end.git
-cd travel-diary
-
+   git clone https://github.com/travel-diary-mobile/Front-end.git
+   cd Front-end
+   npm install
+   npx expo start
 ```
 
-## Instale as dependências
-npm install
+## 📁 Estrutura de pasta
 
-## Inicie o projeto
-npx expo start
-
-## Abra o app Expo Go
-Scan QR code
-
-
-
-# 🔗 API
 ```
-baseURL: 'https://traveldiary.azurewebsites.net/diarioviagens'
+   Front-end/
+   ├── assets/             # Recursos estáticos como imagens e fontes
+   ├── components/         # Componentes reutilizáveis da interface
+   ├── context/            # Gerenciamento de rotas do Back-end
+   ├── navigation/         # Configuração de rotas e navegação
+   └── pages/            # Telas principais da aplicação
+      └── Splash/
+      └── Inical/
+      └── Adicionar/
+      └── Editar/
+      └── Deletar/
+      └── Favoritar/
+      └── Visualizar/
+   └──  services/           # Serviços para comunicação com APIs
+      └── api/
+   ├── App.js              # Arquivo principal da aplicação
+   └── package.json        # Dependências e scripts do projeto
 ```
-
-# 🧠 Desenvolvedores
-
-
-| Nome         | Função no Projeto                                                |
-| ------------ | ---------------------------------------------------------------- |
-| **Letícia**  | TechLead, Back-End e Front-End                                   |
-|              |                                                                  |
-| **Monique**  | Desing, Front-End e Criou a Organização                          |
-|              |                                                                  |
-|   **Ale**    | Front-End  e Documentação                                        |
-|              |                                                                  |
-| **Danielly** | Desing e Front-End                                               |
-|              |                                                                  |
-
-
-
