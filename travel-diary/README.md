@@ -23,3 +23,5 @@ npx expo start
 - Adicionar
 - Editar
 - Visualizar
+
+![Demonstração do projeto](./assets/img/banner.png)
