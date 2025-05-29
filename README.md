@@ -60,4 +60,4 @@
    ├── App.js              # Arquivo principal da aplicação
    └── package.json        # Dependências e scripts do projeto
 ```
-<img src="travel-diary/assets/img/banner.png" alt="Banner" width="200">
+<img src="travel-diary/assets/img/banner.png" alt="Banner" >
