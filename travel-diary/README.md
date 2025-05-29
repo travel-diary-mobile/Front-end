@@ -25,4 +25,3 @@ npx expo start
 - Visualizar
 
 
-![Demonstração do projeto](./assets/img/banner.png)
