@@ -56,7 +56,7 @@
       └── Favoritar/
       └── Visualizar/
    └──  services/           # Serviços para comunicação com APIs
-      └── Visualizar/
+      └── api/
    ├── App.js              # Arquivo principal da aplicação
    └── package.json        # Dependências e scripts do projeto
 ```
